@@ -1,9 +1,15 @@
 const btn_next = document.querySelector('.btn__next')
 const btn_pre = document.querySelector('.btn__pre')
 const slides = [
-    { type: 'image', content: 'https://example.com/image1.jpg' },
-    { type: 'text', content: 'Slide 2: This is some text content.' },
-    { type: 'image', content: 'https://example.com/image3.jpg' },
+    "Slide 1",
+    "Slide 2",
+    "Slide 3",
+    "Slide 4",
+    "Slide 5",
+    "Slide 6",
+    "Slide 7",
+    "Slide 8",
+    "https://png.pngtree.com/thumb_back/fh260/background/20230511/pngtree-nature-background-sunset-wallpaer-with-beautiful-flower-farms-image_2592160.jpg",
 ];
 let currentIndex = 0;
 
@@ -11,25 +17,22 @@ let currentIndex = 0;
 const renderSlides = () => {
     const slidesContainer = document.querySelector('.slides');
     slidesContainer.innerHTML = '';
-
     slides.forEach((slide, index) => {
-        const slideElement = document.createElement('div');
-        slideElement.classList.add('slide');
-
-        if (slide.type === 'image') {
-            const img = document.createElement('img');
-            img.src = slide.content;
-            img.alt = `Slide ${index + 1}`;
-            slideElement.appendChild(img);
-        } else if (slide.type === 'text') {
-            const span = document.createElement('span');
-            span.textContent = slide.content;
-            slideElement.appendChild(span);
-        }
-
-        slidesContainer.appendChild(slideElement);
+        // if (!checkIsImageUrl(slide)) {
+        //     const img = document.createElement('img');
+        //     img.src = slide;
+        //     img.alt = `Slide ${index + 1}`;
+        //     slidesContainer.appendChild(img);
+        // }else{
+           
+        // }
+        const span = document.createElement('span');
+        span.innerHTML = slide;
+        span.alt = `Slide ${index + 1}`;
+        slidesContainer.appendChild(span);
+      
+        
     });
-
     showSlide(currentIndex);
 }
 
@@ -58,7 +61,7 @@ const showSlide = (index) => {
     });
     slideImages.forEach((slide) => {
         slide.style.transition = 'transform 0.7s ease';
-        slide.classList.remove('slideInRight', 'slideInLeft');
+        slide.classList.remove('slideInRight' , 'slideInLeft');
     });
 }
 
