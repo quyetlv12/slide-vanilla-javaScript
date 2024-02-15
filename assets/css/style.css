@@ -1,0 +1,186 @@
+/* CSS Reset */
+
+/* Box sizing rules */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove default padding */
+ul,
+ol {
+    padding: 0;
+}
+
+/* Remove list styles (bullet points) */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove other default styles */
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+body {
+    margin: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+blockquote {
+    quotes: none;
+}
+
+blockquote::before,
+blockquote::after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+input,
+select {
+    appearance: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.btn__pre {
+    flex: 3%;
+    display: flex;
+    justify-content: start;
+}
+
+.slides {
+    flex: 94%;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    transition: transform 0.5s ease;
+}
+
+
+
+.btn_next {
+    flex: 3%;
+    display: flex;
+    justify-content: end;
+}
+
+.btn__action {
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn__action .btn__img {
+    filter: invert(27%) sepia(96%) saturate(2414%) hue-rotate(202deg) brightness(105%) contrast(104%);
+}
+
+.btn__action[disabled] .btn__img {
+    filter: invert(72%) sepia(9%) saturate(2640%) hue-rotate(169deg) brightness(102%) contrast(104%);
+}
+
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slideInRight {
+    animation-name: slideInRight;
+}
+
+.slideInLeft {
+    animation-name: slideInLeft;
+}
+
+/* //responsvie */
+
+@media screen and (min-width: 992px) {
+    .slides .slide {
+        width: 93vw;
+        text-align: center;
+    }
+}
