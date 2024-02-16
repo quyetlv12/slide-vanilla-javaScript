@@ -9,7 +9,7 @@ const slides = [
     "Slide 6",
     "Slide 7",
     "Slide 8",
-    "https://png.pngtree.com/thumb_back/fh260/background/20230511/pngtree-nature-background-sunset-wallpaer-with-beautiful-flower-farms-image_2592160.jpg",
+    "Slide 9",
 ];
 let currentIndex = 0;
 
@@ -60,7 +60,9 @@ const showSlide = (index) => {
         }
     });
     slideImages.forEach((slide) => {
-        slide.style.transition = 'transform 0.7s ease';
+        const slideWidth = slides[0].clientWidth;
+        const offset = -index * slideWidth;
+        slide.style.transform = `translateX(${offset}px)`;
         slide.classList.remove('slideInRight' , 'slideInLeft');
     });
 }
@@ -70,7 +72,7 @@ const previousSlide = () => {
     const slideImages = document.querySelectorAll('.slides span');
     let _curent_slide = currentIndex
     btn_next.disabled = false
-    _curent_slide--
+    _curent_slide = Math.max(_curent_slide - 1, 0);
     slideImages[_curent_slide].style.animation = 'slideInLeft 0.2s forwards';
     showSlide(_curent_slide);
 }
@@ -80,7 +82,7 @@ const nextSlide = () => {
     const slideImages = document.querySelectorAll('.slides span');
     let _curent_slide = currentIndex
     btn_pre.disabled = false
-    _curent_slide++
+    _curent_slide = Math.min(currentIndex + 1, slides.length - 1);
     slideImages[_curent_slide].style.animation = 'slideInRight 0.2s forwards';
     showSlide(_curent_slide);
 }
