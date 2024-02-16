@@ -4,25 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
+    <title>Slider</title>
 </head>
 
 <body>
     <div class="slider">
-        <button class="btn__pre btn__action" onclick="previousSlide()">
-            <img src="./assets/images/left-arrow.svg" class="btn__img" alt="">
-        </button>
-        <button class="btn__next btn__action" onclick="nextSlide()">
-            <img src="./assets/images/right-arrow.svg" class="btn__img" alt="">
-        </button>
-        <ul class="slides">
-        </ul>
-       
-    </div>
-
-    
-    <script src="/assets/js/main.js"></script>
+        <div class="slides">
+            <div>
+                <span class="title">
+                    Slide 1
+                </span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    2
+                </span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    3
+                </span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    4
+                </span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    5</span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    6
+                </span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    7
+                </span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    8
+                </span>
+            </div>
+            <div>
+                <span class="title">Slide
+                    9
+                </span>
+            </div>
+            <button class="icon-arrow_back btn__action" id="prev" onclick="goPrevSlide()">
+                <img src="./assets/images/left-arrow.svg" class="btn__img" alt="">
+            </button>
+            <button class="icon-arrow_forward btn__action" id="next" onclick="goNextSlide()">
+                <img src="./assets/images/right-arrow.svg" class="btn__img" alt="">
+            </button>
+        </div>
+        <script src="assets/js/main.js"></script>
 </body>
 
 </html>
